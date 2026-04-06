@@ -1,0 +1,104 @@
+/**
+ * Подключать после copilot-robot.css. !important — перебить базовый bottom/right.
+ * --copilot-trigger-bottom задаётся из React: 24px без футера, height(футер)+24px если есть.
+ */
+.copilot-robot-root .copilot-trigger {
+  right: 24px !important;
+  bottom: var(--copilot-trigger-bottom, 24px) !important;
+}
+
+/* Вступительный бабл над кнопкой робота */
+.copilot-intro-bubble {
+  position: fixed;
+  right: 24px;
+  bottom: calc(var(--copilot-trigger-bottom, 24px) + 56px + 12px);
+  z-index: calc(var(--cr-z, 12000) + 1);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: min(280px, calc(100vw - 48px));
+  padding: 12px 12px 12px 14px;
+  border-radius: 12px;
+  background: var(--color-ds-bg-block);
+  border: 1px solid var(--color-ds-stroke-secondary);
+  box-shadow:
+    0 4px 24px var(--color-ds-primitive-black-alfa-20),
+    0 0 1px var(--color-ds-primitive-black-alfa-10);
+  opacity: 0;
+  transform: translateY(10px) scale(0.96);
+  pointer-events: none;
+  transition:
+    opacity 0.35s cubic-bezier(0.32, 0.72, 0, 1),
+    transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.copilot-intro-bubble.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.copilot-intro-bubble-text {
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: 500;
+  color: var(--color-ds-text-primary);
+}
+
+.copilot-intro-bubble-close {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  margin: -4px -4px -4px 0;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-ds-text-secondary);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.copilot-intro-bubble-close:hover {
+  background: var(--color-ds-bg-block-alternative);
+  color: var(--color-ds-text-primary);
+}
+
+.copilot-intro-bubble-close:focus-visible {
+  outline: 2px solid var(--color-ds-stroke-focus);
+  outline-offset: 2px;
+}
+
+/* «Хвостик» к роботу */
+.copilot-intro-bubble::after {
+  content: '';
+  position: absolute;
+  right: 20px;
+  bottom: -7px;
+  width: 12px;
+  height: 12px;
+  background: var(--color-ds-bg-block);
+  border-right: 1px solid var(--color-ds-stroke-secondary);
+  border-bottom: 1px solid var(--color-ds-stroke-secondary);
+  transform: rotate(45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .copilot-intro-bubble {
+    transition: none;
+  }
+}
+
+/*
+  Пока открыта боковая колонка копилота, плавающая кнопка и интро-бабл скрыты
+  (класс `copilot-help-drawer-open` вешается на <html> из React).
+*/
+html.copilot-help-drawer-open .copilot-robot-root .copilot-trigger,
+html.copilot-help-drawer-open .copilot-intro-bubble {
+  display: none !important;
+}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('portfolio-nda-unlock') !== '1') {
+          location.replace('index.html?view=portfolio');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <title>Регистрация заказчиков — Ксюша Михайлова</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,900;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="cursor" aria-hidden="true"></div>
+
+  <div class="frame-tr">
+    <span class="frame-tr__name">Ксюша Михайлова</span>
+    <a href="https://t.me/" class="frame-tr__link">tg</a>
+    <a href="mailto:hello@example.com" class="frame-tr__link">email</a>
+    <button class="theme-toggle" aria-label="Сменить тему">
+      <svg class="theme-toggle__icon theme-toggle__moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M8 13.5a5.5 5.5 0 0 0 2.263-10.514 5.5 5.5 0 0 1-7.278 7.278A5.5 5.5 0 0 0 8 13.5M1.045 8.795a7.001 7.001 0 1 0 7.75-7.75l-.028-.003A7 7 0 0 0 8 1c-.527 0-.59.842-.185 1.18a4 4 0 0 1 .342.322A4 4 0 1 1 2.18 7.814C1.842 7.41 1 7.474 1 8a7 7 0 0 0 .045.794" clip-rule="evenodd"/></svg>
+      <svg class="theme-toggle__icon theme-toggle__sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M8 3a.75.75 0 0 1-.75-.75V.75a.75.75 0 0 1 1.5 0v1.5A.75.75 0 0 1 8 3m0 7.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8m-.75 3.25a.75.75 0 0 0 1.5 0v-1.5a.75.75 0 0 0-1.5 0zM13 8a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5h-1.5A.75.75 0 0 1 13 8M.75 7.25a.75.75 0 0 0 0 1.5h1.5a.75.75 0 0 0 0-1.5zm10.786-2.786a.75.75 0 0 1 0-1.06l1.06-1.06a.75.75 0 0 1 1.06 1.06l-1.06 1.06a.75.75 0 0 1-1.06 0m-9.193 8.132a.75.75 0 0 0 1.06 1.06l1.062-1.06a.75.75 0 0 0-1.061-1.06zm9.193-1.06a.75.75 0 0 1 1.06 0l1.06 1.06a.75.75 0 0 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.06M3.404 2.343a.75.75 0 0 0-1.06 1.06l1.06 1.061a.75.75 0 1 0 1.06-1.06z" clip-rule="evenodd"/></svg>
+    </button>
+  </div>
+
+  <article class="case-page">
+
+    <a href="index.html?view=portfolio" class="case-page__back">&larr; Назад к&nbsp;портфолио</a>
+
+    <!-- Hero -->
+    <header class="case-page__hero">
+      <span class="label" data-accent="cyan">Кейс 02</span>
+      <h1 class="case-page__title">Регистрация<br><em data-accent="cyan">заказчиков</em></h1>
+      <p class="case-page__lead">Как&nbsp;мы&nbsp;делали регистрацию для&nbsp;внешних заказчиков и&nbsp;что из&nbsp;этого вышло</p>
+    </header>
+
+    <div class="case-page__summary" data-accent="cyan">
+      <span class="case-page__summary-label">Коротко о&nbsp;кейсе</span>
+      <p>
+        Платформа долго жила как внутренняя; внешних заказчиков заводили вручную через поддержку&nbsp;— долго, дорого и&nbsp;с&nbsp;ошибками.
+      </p>
+      <p>
+        Задача: самообслуживающаяся регистрация, рост доли внешних заказчиков и&nbsp;выручки, снижение нагрузки на&nbsp;поддержку.
+      </p>
+      <p>
+        <strong>Моя роль&nbsp;— дизайнер продукта:</strong> дискавери (конкуренты, бэк, интервью с&nbsp;поддержкой), сократила поля с&nbsp;15+ до&nbsp;необходимого минимума и&nbsp;спроектировала флоу до&nbsp;релиза.
+      </p>
+    </div>
+
+    <figure class="case-page__figure">
+      <img
+        class="case-page__hero-img"
+        src="портфолио/первый/регистрация.svg"
+        width="832"
+        height="608"
+        alt="Макет регистрации заказчика"
+        loading="eager"
+        decoding="async"
+      >
+      <figcaption class="case-page__caption">
+        Макет регистрации заказчика
+      </figcaption>
+    </figure>
+
+    <!-- Что за Яндекс Задания -->
+    <h2>Что ещё за&nbsp;Яндекс Задания</h2>
+    <p>
+      Яндекс Задания&nbsp;— платформа, где заказчики, то&nbsp;есть те, кому что-то нужно сделать,
+      публикуют свои задания и&nbsp;указывают, сколько готовы за&nbsp;это заплатить. А&nbsp;другие люди,
+      исполнители, выполняют эти задания и&nbsp;получают за&nbsp;это оплату.
+    </p>
+    <p>
+      Возможно, вы&nbsp;что-то слышали о&nbsp;Толоке. Задания&nbsp;— это такая же&nbsp;платформа, только красивее.
+    </p>
+
+    <!-- Как получилось -->
+    <h2>Как&nbsp;получилось, что регистрации не&nbsp;было</h2>
+    <p>
+      Исторически платформа разрабатывалась как&nbsp;внутренняя, то&nbsp;есть только для&nbsp;других
+      сервисов Яндекса.
+    </p>
+
+    <!-- Зачем -->
+    <h2>Зачем тогда регистрация</h2>
+    <p>
+      Когда внешним заказчикам хотелось попасть на&nbsp;платформу, поддержка заводила им&nbsp;аккаунты
+      и&nbsp;проекты вручную, что, конечно, было долго и&nbsp;дорого&nbsp;— человеческий фактор, ошибки,
+      потерянные заявки.
+    </p>
+    <p>
+      Хотелось увеличить количество внешних заказчиков, а&nbsp;вместе с&nbsp;ними и&nbsp;выручку платформы.
+    </p>
+
+    <blockquote>
+      Цели:<br>
+      — Увеличить число внешних заказчиков<br>
+      — Вырастить выручку платформы на&nbsp;ХХ%<br>
+      — Снизить нагрузку на&nbsp;поддержку
+    </blockquote>
+
+    <!-- Дискавери -->
+    <h2>Дискавери</h2>
+    <p>
+      В&nbsp;первую очередь я&nbsp;пошла смотреть конкурентов, разобралась, что у&nbsp;нас лежит
+      на&nbsp;бэке, что вылилось во&nbsp;внезапный миникастдев и&nbsp;пообщалась с&nbsp;маркетингом.
+    </p>
+
+    <h3>Озон и&nbsp;Сбер</h3>
+    <p>
+      Форма лидогенерации&nbsp;— собирают контакты, заполняют руками поддержки.
+      Такой вариант мы&nbsp;не&nbsp;рассматривали, потому что именно от&nbsp;ручной работы хотели уйти.
+    </p>
+
+    <figure class="case-page__figure">
+      <div class="mockup-placeholder" style="aspect-ratio: 16/9"><span>Скриншоты конкурентов</span></div>
+    </figure>
+
+    <h3>Другие конкуренты</h3>
+    <p>
+      Форма делилась на&nbsp;форму регистрации для&nbsp;юриков и&nbsp;физиков.
+    </p>
+    <blockquote>
+      Появилась гипотеза: если мы&nbsp;будем регистрировать всех как&nbsp;физиков, мы&nbsp;снизим
+      порог входа и&nbsp;дадим возможность попробовать продукт быстрее, что увеличит конверсию
+      в&nbsp;запуск первого проекта и&nbsp;положительно повлияет на&nbsp;выручку.
+    </blockquote>
+
+    <h3>Инфа от&nbsp;бэка</h3>
+    <p>
+      Так как&nbsp;заводить новых заказчиков мы&nbsp;уже умели (руками через поддержку), значит
+      был и&nbsp;бэк. Чтобы понять, какие поля вообще есть и&nbsp;какие из&nbsp;них обязательные,
+      я&nbsp;пошла к&nbsp;разработке.
+    </p>
+    <p>
+      Оказалось, они собирают на&nbsp;вход больше 15&nbsp;полей, и&nbsp;почти все обязательные.
+      «Бедная техподдержка», подумала я, взяла список полей, взяла менеджера и&nbsp;пошла к,
+      собственно, лидам поддержки, выяснять, как&nbsp;и&nbsp;зачем они пользуются информацией,
+      которую заполняют, когда приходит заявка.
+    </p>
+    <blockquote>
+      Гипотеза: поддержка не&nbsp;пользуется полями в&nbsp;дальнейшем, поэтому не&nbsp;заполняет
+      нормально. Мы&nbsp;можем сократить количество полей для&nbsp;заполнения пользователем
+      без&nbsp;ущерба работе продукта.
+    </blockquote>
+
+    <h3>Результат общения с&nbsp;поддержкой</h3>
+    <p>
+      Из&nbsp;всех полей важными оказались несколько, их&nbsp;мы&nbsp;решили оставить.
+      Эти поля очень простые и&nbsp;не&nbsp;должны создать препятствий на&nbsp;пути новых заказчиков.
+    </p>
+
+    <figure class="case-page__figure">
+      <div class="mockup-placeholder" style="aspect-ratio: 16/9"><span>Схема: было 15+ полей → стало N</span></div>
+    </figure>
+
+    <h3>Инсайт</h3>
+    <p>
+      По&nbsp;пути мы&nbsp;спросили поддержку о&nbsp;статистике регистраций&nbsp;— сколько приходит,
+      сколько заканчивает. Оказалось, что огромное количество отваливается на&nbsp;этапе,
+      когда поддержка просит документы.
+    </p>
+    <blockquote>
+      Тут я&nbsp;укрепилась в&nbsp;своей гипотезе: сначала всех надо регать как&nbsp;физиков,
+      давать трогать продукт, а&nbsp;потом уже просить документы&nbsp;— людям намного проще
+      сделать усилие, если они понимают, для&nbsp;чего.
+    </blockquote>
+
+    <!-- Переговоры -->
+    <h2>Переговоры со&nbsp;смежниками</h2>
+    <p>
+      Задача про&nbsp;торчащий наружу кусок продукта породила огромный виток переговоров
+      с&nbsp;юристами и&nbsp;маркетологами.
+    </p>
+    <p>
+      В&nbsp;несколько итераций мы&nbsp;утверждали формулировки согласий, чтобы они не&nbsp;были
+      совсем уж&nbsp;монструозными, потом цвета элементов (брендинг отличается от&nbsp;внутренней
+      дизайн-системы).
+    </p>
+
+    <figure class="case-page__figure">
+      <div class="mockup-placeholder" style="aspect-ratio: 16/9"><span>Макеты / итерации</span></div>
+    </figure>
+
+    <!-- Что в итоге -->
+    <h2>Что в&nbsp;итоге</h2>
+    <p>
+      Само проектирование пути и&nbsp;отрисовка макетов не&nbsp;были такими интересными&nbsp;—
+      с&nbsp;этой точки зрения задача вполне стандартная. Тем не&nbsp;менее, было отрисовано
+      несколько вариантов, а&nbsp;после утверждения финального вида флоу успеха, спроектированы ошибки.
+    </p>
+    <p>
+      Актуальная <a href="https://tasks.yandex.ru/signup/requester?utm_source=ytasks_b2b_landing" target="_blank" rel="noopener noreferrer">форма регистрации заказчика</a>
+      на&nbsp;Яндекс Заданиях.
+    </p>
+
+    <figure class="case-page__figure">
+      <div class="mockup-placeholder" style="aspect-ratio: 16/9"><span>Финальные макеты</span></div>
+    </figure>
+
+    <div class="case-page__resources" data-accent="cyan">
+      <span class="case-page__resources-label">Макеты</span>
+      <ul class="case-page__resources-list">
+        <li>
+          <a href="https://www.figma.com/design/0ftDNcjIc6O9Z5KFRaE6fA/%D0%97%D0%B0%D0%BA%D0%B0%D0%B7%D1%87%D0%B8%D0%BA?node-id=1242-102848&amp;t=WOprzybQhBHJOoCz-1" target="_blank" rel="noopener noreferrer">Figma&nbsp;— «Заказчик», макет регистрации</a>
+        </li>
+        <li>
+          <a href="https://www.figma.com/design/0ftDNcjIc6O9Z5KFRaE6fA/%D0%97%D0%B0%D0%BA%D0%B0%D0%B7%D1%87%D0%B8%D0%BA?node-id=2639-42225&amp;t=WOprzybQhBHJOoCz-1" target="_blank" rel="noopener noreferrer">Figma&nbsp;— «Заказчик», дополнительные экраны</a>
+        </li>
+      </ul>
+    </div>
+
+    <a href="index.html?view=portfolio" class="case-page__back case-page__back--bottom">&larr; Назад к&nbsp;портфолио</a>
+
+  </article>
+
+  <script src="script.js"></script>
+</body>
+</html>

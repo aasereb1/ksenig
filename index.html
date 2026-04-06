@@ -1,15 +1,322 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ksenig</title>
-	<meta name="description" content="My Awesome App description">
-	<meta name="theme-color" content="#ffffff">
-	<meta content='yes' name='apple-mobile-web-app-capable'/>
-	<meta content='yes' name='mobile-web-app-capable'/>
-  </head>
-  <body>
-    <div id="root">hello</div>
-  </body>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ксюша Михайлова</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="copilot-robot.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,900;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="cursor" aria-hidden="true"></div>
+
+  <!-- ============= HEADER (visible on all screens) ============= -->
+  <div class="frame-tr">
+    <span class="frame-tr__name" id="header-name" hidden>Ксюша Михайлова</span>
+    <a href="https://t.me/design_igosheva" class="frame-tr__link" target="_blank" rel="noopener noreferrer">tg</a>
+    <a href="mailto:igosheva2011@yandex.ru" class="frame-tr__link">email</a>
+    <button class="theme-toggle" aria-label="Сменить тему">
+      <svg class="theme-toggle__icon theme-toggle__moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M8 13.5a5.5 5.5 0 0 0 2.263-10.514 5.5 5.5 0 0 1-7.278 7.278A5.5 5.5 0 0 0 8 13.5M1.045 8.795a7.001 7.001 0 1 0 7.75-7.75l-.028-.003A7 7 0 0 0 8 1c-.527 0-.59.842-.185 1.18a4 4 0 0 1 .342.322A4 4 0 1 1 2.18 7.814C1.842 7.41 1 7.474 1 8a7 7 0 0 0 .045.794" clip-rule="evenodd"/></svg>
+      <svg class="theme-toggle__icon theme-toggle__sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M8 3a.75.75 0 0 1-.75-.75V.75a.75.75 0 0 1 1.5 0v1.5A.75.75 0 0 1 8 3m0 7.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8m-.75 3.25a.75.75 0 0 0 1.5 0v-1.5a.75.75 0 0 0-1.5 0zM13 8a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5h-1.5A.75.75 0 0 1 13 8M.75 7.25a.75.75 0 0 0 0 1.5h1.5a.75.75 0 0 0 0-1.5zm10.786-2.786a.75.75 0 0 1 0-1.06l1.06-1.06a.75.75 0 0 1 1.06 1.06l-1.06 1.06a.75.75 0 0 1-1.06 0m-9.193 8.132a.75.75 0 0 0 1.06 1.06l1.062-1.06a.75.75 0 0 0-1.061-1.06zm9.193-1.06a.75.75 0 0 1 1.06 0l1.06 1.06a.75.75 0 0 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.06M3.404 2.343a.75.75 0 0 0-1.06 1.06l1.06 1.061a.75.75 0 1 0 1.06-1.06z" clip-rule="evenodd"/></svg>
+    </button>
+  </div>
+
+  <!-- ============= SPLASH SCREEN ============= -->
+  <div class="screen splash" id="splash">
+    <div class="splash__content">
+      <h1 class="splash__name" id="splash-name">Ксюша Михайлова</h1>
+      <p class="splash__role">портфолио</p>
+      <p class="splash__desc">Мои кейсы под&nbsp;NDA, и&nbsp;посмотреть их&nbsp;могут только сотрудники Яндекса. Вы&nbsp;из&nbsp;Яндекса?</p>
+      <div class="splash__buttons">
+        <div class="splash__btn-wrap">
+          <button class="splash__btn" data-accent="cyan" id="btn-yandex">Я&nbsp;из&nbsp;Яндекса</button>
+          <span class="splash__hint">Увидишь все кейсы подробно, нужен пароль</span>
+        </div>
+        <div class="splash__btn-wrap">
+          <button class="splash__btn" data-accent="violet" id="btn-other">Я&nbsp;из&nbsp;другой компании</button>
+          <span class="splash__hint">Получится посмотреть без&nbsp;подробностей</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============= PASSWORD SCREEN ============= -->
+  <div class="screen password-screen" id="password-screen" hidden>
+    <div class="password-screen__content">
+      <h2 class="password-screen__title">Введи пароль</h2>
+      <p class="password-screen__sub">Доступ к&nbsp;NDA-кейсам только для&nbsp;сотрудников Яндекса</p>
+      <div class="password-screen__field">
+        <input type="password" class="password-screen__input" id="password-input" placeholder="Пароль" autocomplete="off">
+        <button class="password-screen__submit" id="password-submit">&rarr;</button>
+      </div>
+      <p class="password-screen__error" id="password-error" hidden>
+        Кажется, ты&nbsp;не&nbsp;из&nbsp;Яндекса. <a href="#" id="error-go-public">Перейди сюда</a> или&nbsp;напиши мне в&nbsp;<a href="https://t.me/design_igosheva" target="_blank" rel="noopener noreferrer">тг</a>, чтобы получить пароль
+      </p>
+    </div>
+  </div>
+
+  <!-- ============= PORTFOLIO (main content) ============= -->
+  <div class="screen portfolio" id="portfolio" hidden>
+
+    <div class="frame-tl">Product Designer<br>Яндекс</div>
+
+    <nav class="side-nav">
+      <a href="#cases" class="side-nav__link" data-section="cases">Продуктовые кейсы</a>
+      <a href="#ds" class="side-nav__link" data-section="ds">Около продукта</a>
+      <a href="#process" class="side-nav__link" data-section="process">Как работаю</a>
+      <a href="#about" class="side-nav__link" data-section="about">Обо мне</a>
+      <a href="#contact" class="side-nav__link" data-section="contact">Контакты</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero__content">
+        <h1 class="hero__title">
+          <span class="hero__line">Делаю</span>
+          <span class="hero__line hero__line--italic hero__line--glow">сложное</span>
+          <span class="hero__line">понятным,</span>
+          <span class="hero__line hero__line--italic">а&nbsp;понятное&nbsp;— измеримым</span>
+        </h1>
+      </div>
+      <div class="hero__marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>product design</span><span>—</span>
+          <span>design systems</span><span>—</span>
+          <span>B2B interfaces</span><span>—</span>
+          <span>user research</span><span>—</span>
+          <span>product design</span><span>—</span>
+          <span>design systems</span><span>—</span>
+          <span>B2B interfaces</span><span>—</span>
+          <span>user research</span><span>—</span>
+        </div>
+        <div class="marquee__track">
+          <span>product design</span><span>—</span>
+          <span>design systems</span><span>—</span>
+          <span>B2B interfaces</span><span>—</span>
+          <span>user research</span><span>—</span>
+          <span>product design</span><span>—</span>
+          <span>design systems</span><span>—</span>
+          <span>B2B interfaces</span><span>—</span>
+          <span>user research</span><span>—</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПРОДУКТОВЫЕ КЕЙСЫ -->
+    <section class="section cases" id="cases">
+      <div class="section__head">
+        <span class="label">01</span>
+        <h2 class="section__title">Продуктовые<br><em data-accent="cyan">кейсы</em></h2>
+      </div>
+
+      <p class="section__desc">
+        Здесь я&nbsp;собрала проекты, в&nbsp;которых помогала решать продуктовые
+        и&nbsp;бизнес-задачи с&nbsp;помощью дизайна. Мне важно не&nbsp;просто показать
+        финальный результат, но&nbsp;и&nbsp;рассказать, как&nbsp;я&nbsp;к&nbsp;нему пришла: как&nbsp;разбиралась в&nbsp;контексте, проектировала сложные сценарии, учитывала
+        ограничения и&nbsp;доводила решения до&nbsp;запуска.
+        <br><span class="nda-note">NDA&nbsp;— только для&nbsp;яндексоидов</span>
+      </p>
+
+      <div class="cases__list">
+        <a href="case-dashboard.html" class="case-card" data-accent="lime">
+          <div class="case-card__glow"></div>
+          <div class="case-card__content">
+            <span class="card__label">01</span>
+            <h3 class="case-card__title">Личный кабинет<br>заказчика</h3>
+            <p class="case-card__sub">проектирование с&nbsp;нуля</p>
+            <p class="case-card__summary">Единый кабинет при слиянии Янга и&nbsp;Заданий: IA, миграция и&nbsp;координация дизайна</p>
+            <span class="case-card__cta case-card__cta--nda">Смотреть кейс &rarr;</span>
+            <span class="case-card__cta case-card__cta--public">Подробнее расскажу при&nbsp;встрече</span>
+          </div>
+          <div class="case-card__preview">
+            <img class="case-card__img case-card__img--dark" src="портфолио/crowdsolutions-labeling-hero.png" width="1200" height="630" alt="Yandex Crowd Solutions — превью с посадочной страницы про разметку данных">
+            <img class="case-card__img case-card__img--light" src="портфолио/crowdsolutions-labeling-hero.png" width="1200" height="630" alt="Yandex Crowd Solutions — превью с посадочной страницы про разметку данных">
+          </div>
+        </a>
+
+        <a href="case-registration.html" class="case-card" data-accent="cyan">
+          <div class="case-card__glow"></div>
+          <div class="case-card__content">
+            <span class="card__label">02</span>
+            <h3 class="case-card__title">Регистрация<br>заказчиков</h3>
+            <p class="case-card__sub">в&nbsp;Яндекс Заданиях</p>
+            <p class="case-card__summary">Самообслуживание для внешних заказчиков вместо ручного заведения через поддержку</p>
+            <span class="case-card__cta case-card__cta--nda">Смотреть кейс &rarr;</span>
+            <span class="case-card__cta case-card__cta--public">Подробнее расскажу при&nbsp;встрече</span>
+          </div>
+          <div class="case-card__preview">
+            <img class="case-card__img case-card__img--dark" src="портфолио/первый/регистрация.svg" width="832" height="608" alt="Макет регистрации заказчика">
+            <img class="case-card__img case-card__img--light" src="портфолио/первый/регистрация.svg" width="832" height="608" alt="Макет регистрации заказчика">
+          </div>
+        </a>
+
+        <a href="case-quick-launch.html" class="case-card" data-accent="violet">
+          <div class="case-card__glow"></div>
+          <div class="case-card__content">
+            <span class="card__label">03</span>
+            <h3 class="case-card__title">Быстрый запуск<br>проекта</h3>
+            <p class="case-card__sub">по&nbsp;разметке</p>
+            <p class="case-card__summary">Упрощаем запуск разметки в&nbsp;YCS и&nbsp;встраиваем агента как точку входа в&nbsp;сценарий</p>
+            <span class="case-card__cta case-card__cta--nda">Смотреть кейс &rarr;</span>
+            <span class="case-card__cta case-card__cta--public">Подробнее расскажу при&nbsp;встрече</span>
+          </div>
+          <div class="case-card__preview case-card__preview--robot" id="robot-mount">
+            <div class="copilot-intro-bubble copilot-intro-bubble--card is-visible" role="status">
+              <span class="copilot-intro-bubble-text">Помогу настроить проект</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ОКОЛО ПРОДУКТА -->
+    <section class="section ds" id="ds">
+      <div class="section__head">
+        <span class="label">02</span>
+        <h2 class="section__title">Около<br><em data-accent="magenta">продукта</em></h2>
+      </div>
+
+      <p class="section__desc">
+        Лидирую дизайн-систему продукта для&nbsp;веба: составляю
+        роадмапы, планирую и&nbsp;распределяю задачи, повышаю
+        счастье разработчиков, внедряю AI на&nbsp;системном уровне.
+        <br><span class="nda-note">NDA&nbsp;— только для&nbsp;яндексоидов</span>
+      </p>
+
+      <div class="ds__grid">
+        <div class="card card--vertical card--static" data-accent="magenta">
+          <span class="card__label">01</span>
+          <h3 class="card__step-title">Дизайн-система</h3>
+          <p class="card__desc">Компоненты, токены, роадмап, процессы</p>
+        </div>
+        <div class="card card--vertical card--static" data-accent="amber">
+          <span class="card__label">02</span>
+          <h3 class="card__step-title">Дизайн-долг</h3>
+          <p class="card__desc">Аудит, приоритизация, системное закрытие</p>
+        </div>
+        <div class="card card--vertical card--static" data-accent="violet">
+          <span class="card__label">03</span>
+          <h3 class="card__step-title">Внедрение AI в&nbsp;процессы</h3>
+          <p class="card__desc">AI на&nbsp;системном уровне в&nbsp;дизайне и&nbsp;разработке</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- КАК РАБОТАЮ -->
+    <section class="section process" id="process">
+      <div class="section__head">
+        <span class="label">03</span>
+        <h2 class="section__title">Как<br><em data-accent="amber">работаю</em></h2>
+      </div>
+
+      <div class="process__steps">
+        <div class="card card--vertical card--static" data-accent="cyan">
+          <span class="card__label">01</span>
+          <h3 class="card__step-title">Исследование</h3>
+          <p class="card__desc">
+            Участвую во&nbsp;всём цикле дискавери: генерю гипотезы,
+            провожу исследования, собираю требования. Привлекаю
+            тех.&nbsp;команду на&nbsp;ранних этапах для&nbsp;валидации решений.
+          </p>
+        </div>
+        <div class="card card--vertical card--static" data-accent="magenta">
+          <span class="card__label">02</span>
+          <h3 class="card__step-title">Проектирование</h3>
+          <p class="card__desc">
+            Несколько вариантов реализации грумлю с&nbsp;командой,
+            рабочей группой от&nbsp;заказчика, отделом дизайна.
+            Тестирую флоу на&nbsp;конечных пользователях, провожу
+            демо для&nbsp;фокус-групп, собираю фидбек.
+          </p>
+        </div>
+        <div class="card card--vertical card--static" data-accent="lime">
+          <span class="card__label">03</span>
+          <h3 class="card__step-title">Сопровождение</h3>
+          <p class="card__desc">
+            Контролирую выпуск фичи&nbsp;— провожу дизайн-ревью
+            фронта, собираю фидбек от&nbsp;ранних пользователей.
+            Инициирую доработки.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ОБО МНЕ -->
+    <section class="section about" id="about">
+      <div class="section__head">
+        <span class="label">04</span>
+        <h2 class="section__title">Обо&nbsp;<em data-accent="violet">мне</em></h2>
+      </div>
+
+      <div class="about__layout">
+        <div class="about__photo">
+          <div class="about__photo-wrap">
+            <img src="портфолио/photo.jpeg" alt="Ксюша Михайлова" class="about__photo-img">
+          </div>
+        </div>
+        <div class="about__body">
+          <ul class="about__list" data-accent="violet">
+            <li><strong>Системно</strong> работаю с&nbsp;<strong>дизайн-системами</strong>&nbsp;— проведу <strong>аудит</strong>, <strong>внедрю</strong>, <strong>переведу</strong>, <strong>нарисую</strong></li>
+            <li>Давно в&nbsp;<strong>сложных B2B</strong> и&nbsp;<strong>внутренних продуктах</strong>&nbsp;— <strong>сегментирую</strong>, проработаю <strong>ролевку</strong>, контролирую <strong>релизы</strong>, собираю <strong>фидбек</strong></li>
+            <li>Много <strong>стейкхолдеров</strong>&nbsp;— обычное дело: не&nbsp;стесняюсь задавать <strong>вопросы</strong> и&nbsp;ставить задачи ни&nbsp;<strong>маркетингу</strong>, ни&nbsp;<strong>юристам</strong>, ко&nbsp;всем схожу, обсужу, договорюсь</li>
+            <li>Внедряю <strong>AI</strong> в&nbsp;<strong>процессы</strong>&nbsp;— на&nbsp;<strong>всех стадиях</strong> работы, делюсь <strong>инструментами</strong> и&nbsp;<strong>практиками</strong></li>
+            <li><strong>Обучаю</strong> и&nbsp;<strong>погружаю</strong>&nbsp;— люблю развивать и&nbsp;<strong>менторить</strong> малышей, расту через это сама</li>
+            <li><strong>Проактивно</strong> подхожу к&nbsp;задачам, не&nbsp;жду, пока кто-то придёт и&nbsp;скажет, что делать. Задаю много <strong>вопросов</strong></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section class="section contact" id="contact">
+      <div class="section__head">
+        <span class="label">05</span>
+        <h2 class="section__title">Конта<em data-accent="lime">кты</em></h2>
+      </div>
+
+      <div class="contact__layout">
+        <div class="contact__list">
+          <div class="contact-row">
+            <span class="contact-row__label">Telegram</span>
+            <span class="contact-row__tail">
+              <button type="button" class="contact-row__value-btn contact-row--copy" data-copy="@design_igosheva" data-tooltip="Копировать" aria-label="Копировать">
+                <span class="contact-row__value">@design_igosheva</span>
+              </button>
+              <a href="https://t.me/design_igosheva" class="contact-row__go" target="_blank" rel="noopener noreferrer" data-tooltip="Открыть в Telegram" aria-label="Открыть в Telegram"><span class="contact-row__arrow">&rarr;</span></a>
+            </span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row__label">Email</span>
+            <span class="contact-row__tail">
+              <button type="button" class="contact-row__value-btn contact-row--copy" data-copy="igosheva2011@yandex.ru" data-tooltip="Копировать" aria-label="Копировать">
+                <span class="contact-row__value">igosheva2011@yandex.ru</span>
+              </button>
+              <a href="mailto:igosheva2011@yandex.ru" class="contact-row__go" data-tooltip="Написать" aria-label="Написать"><span class="contact-row__arrow">&rarr;</span></a>
+            </span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row__label">Телефон</span>
+            <span class="contact-row__tail">
+              <button type="button" class="contact-row__value-btn contact-row--copy" data-copy="+79522632860" data-tooltip="Копировать" aria-label="Копировать">
+                <span class="contact-row__value">+7 (952) 263-28-60</span>
+              </button>
+              <a href="tel:+79522632860" class="contact-row__go" data-tooltip="Позвонить" aria-label="Позвонить"><span class="contact-row__arrow">&rarr;</span></a>
+            </span>
+          </div>
+          <a href="https://spb.hh.ru/resume/8395ce7bff087733650039ed1f6e316b346874" class="contact-row contact-row--link" target="_blank" rel="noopener noreferrer" data-tooltip="Перейти на хх" aria-label="Перейти на хх">Резюме <span class="contact-row__arrow">&rarr;</span></a>
+        </div>
+      </div>
+
+      <p class="footer__copy">&copy; 2026 Ксюша Михайлова | навайбкодила в&nbsp;Cursor</p>
+    </section>
+
+  </div><!-- /portfolio -->
+
+  <script src="copilot-robot.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>

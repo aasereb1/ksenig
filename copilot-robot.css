@@ -1,0 +1,169 @@
+/**
+ * Copilot Robot — плавающая кнопка + опционально сайдбар.
+ * Подключите после базовых стилей приложения. Классы с префиксом .copilot-*.
+ */
+
+.copilot-robot-root {
+  --cr-z: 1000;
+}
+
+.copilot-robot-root .copilot-trigger {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: var(--cr-z);
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: transparent;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.copilot-robot-root .copilot-trigger:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.22);
+}
+
+.copilot-robot-root .copilot-trigger:active {
+  transform: scale(0.98);
+}
+
+.copilot-robot-root .copilot-trigger:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+.copilot-robot-root .copilot-trigger[aria-expanded="true"] {
+  transform: scale(0.96);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.14);
+}
+
+.copilot-robot-root .copilot-face {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.copilot-robot-root .copilot-face-bg {
+  width: 50px;
+  height: 50px;
+  display: block;
+  position: absolute;
+  z-index: 0;
+}
+
+.copilot-robot-root .copilot-face-svg {
+  width: 50px;
+  height: 50px;
+  display: block;
+  position: absolute;
+  z-index: 1;
+}
+
+.copilot-robot-root .copilot-face-svg .copilot-eye-group {
+  transition: transform 0.08s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .copilot-robot-root .copilot-face-svg .copilot-eye-group {
+    transition: none;
+  }
+  .copilot-robot-root .copilot-trigger {
+    transition: none;
+  }
+}
+
+.copilot-robot-root .copilot-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--cr-z) + 1);
+  background: rgba(15, 23, 42, 0.35);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.copilot-robot-root .copilot-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.copilot-robot-root .copilot-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: calc(var(--cr-z) + 2);
+  width: min(420px, 100vw);
+  height: 100vh;
+  height: 100dvh;
+  background: #fff;
+  box-shadow: -12px 0 40px rgba(15, 23, 42, 0.12);
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.copilot-robot-root .copilot-sidebar.is-open {
+  transform: translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .copilot-robot-root .copilot-backdrop,
+  .copilot-robot-root .copilot-sidebar {
+    transition: none;
+  }
+}
+
+.copilot-robot-root .copilot-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  border-bottom: 1px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.copilot-robot-root .copilot-sidebar-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.copilot-robot-root .copilot-sidebar-close {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.copilot-robot-root .copilot-sidebar-close:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.copilot-robot-root .copilot-sidebar-body {
+  flex: 1;
+  overflow: auto;
+  padding: 20px 18px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.55;
+}

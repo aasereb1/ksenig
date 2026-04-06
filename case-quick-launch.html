@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('portfolio-nda-unlock') !== '1') {
+          location.replace('index.html?view=portfolio');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <title>Быстрый запуск проекта — Ксюша Михайлова</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,900;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="cursor" aria-hidden="true"></div>
+
+  <div class="frame-tr">
+    <span class="frame-tr__name">Ксюша Михайлова</span>
+    <a href="https://t.me/" class="frame-tr__link">tg</a>
+    <a href="mailto:hello@example.com" class="frame-tr__link">email</a>
+    <button class="theme-toggle" aria-label="Сменить тему">
+      <svg class="theme-toggle__icon theme-toggle__moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M8 13.5a5.5 5.5 0 0 0 2.263-10.514 5.5 5.5 0 0 1-7.278 7.278A5.5 5.5 0 0 0 8 13.5M1.045 8.795a7.001 7.001 0 1 0 7.75-7.75l-.028-.003A7 7 0 0 0 8 1c-.527 0-.59.842-.185 1.18a4 4 0 0 1 .342.322A4 4 0 1 1 2.18 7.814C1.842 7.41 1 7.474 1 8a7 7 0 0 0 .045.794" clip-rule="evenodd"/></svg>
+      <svg class="theme-toggle__icon theme-toggle__sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M8 3a.75.75 0 0 1-.75-.75V.75a.75.75 0 0 1 1.5 0v1.5A.75.75 0 0 1 8 3m0 7.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8m-.75 3.25a.75.75 0 0 0 1.5 0v-1.5a.75.75 0 0 0-1.5 0zM13 8a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5h-1.5A.75.75 0 0 1 13 8M.75 7.25a.75.75 0 0 0 0 1.5h1.5a.75.75 0 0 0 0-1.5zm10.786-2.786a.75.75 0 0 1 0-1.06l1.06-1.06a.75.75 0 0 1 1.06 1.06l-1.06 1.06a.75.75 0 0 1-1.06 0m-9.193 8.132a.75.75 0 0 0 1.06 1.06l1.062-1.06a.75.75 0 0 0-1.061-1.06zm9.193-1.06a.75.75 0 0 1 1.06 0l1.06 1.06a.75.75 0 0 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.06M3.404 2.343a.75.75 0 0 0-1.06 1.06l1.06 1.061a.75.75 0 1 0 1.06-1.06z" clip-rule="evenodd"/></svg>
+    </button>
+  </div>
+
+  <article class="case-page">
+
+    <a href="index.html?view=portfolio" class="case-page__back">&larr; Назад к&nbsp;портфолио</a>
+
+    <header class="case-page__hero">
+      <span class="label" data-accent="violet">Кейс 03</span>
+      <h1 class="case-page__title">Быстрый запуск<br><em data-accent="violet">проекта</em></h1>
+      <p class="case-page__lead">Как&nbsp;мы&nbsp;упрощаем запуск разметки в&nbsp;Яндекс Крауд Солюшенс и&nbsp;зачем в&nbsp;продукте появился агент</p>
+    </header>
+
+    <div class="case-page__summary" data-accent="violet">
+      <span class="case-page__summary-label">Коротко о&nbsp;кейсе</span>
+      <p>
+        YCS&nbsp;— новая платформа на&nbsp;смену Янгу и&nbsp;Заданиям; запуск разметки сейчас многоступенчатый и&nbsp;требует экспертизы.
+      </p>
+      <p>
+        Продуктовая цель&nbsp;— меньше времени на&nbsp;запуск; вектор развития&nbsp;— встроенный агент, который помогает настроить проект и&nbsp;пул с&nbsp;заданиями.
+      </p>
+      <p>
+        <strong>Моя роль&nbsp;— дизайнер продукта:</strong> спроектировала точку входа в&nbsp;агент, чат и&nbsp;сценарии для пользователя; согласовала с&nbsp;ML и&nbsp;разработкой, прототип для грумингов.
+      </p>
+    </div>
+
+    <h2>Контекст: что такое Яндекс Крауд Солюшенс</h2>
+    <p>
+      Яндекс Крауд Солюшенс&nbsp;— новая платформа для запуска разметки, на&nbsp;смену Янгу и&nbsp;Заданиям. Подробнее о&nbsp;платформе&nbsp;— <a href="case-dashboard.html">в&nbsp;соседнем кейсе</a>.
+    </p>
+
+    <h2>В&nbsp;чём проблема</h2>
+    <p>
+      Как&nbsp;бы мы&nbsp;всей командой ни&nbsp;прикладывали усилия, проект у&nbsp;нас получился сложным, многоступенчатым. Чтобы запустить разметку, нужно быть практически экспертом в&nbsp;этом&nbsp;— и&nbsp;желательно уже пару раз что-то где-то запустить.
+    </p>
+
+    <figure class="case-page__figure case-page__figure--flow">
+      <div class="case-flow" data-accent="violet" role="img" aria-label="Многоступенчатый путь запуска разметки в личном кабинете">
+        <div class="case-flow__track">
+          <span class="case-flow__step">Аналитика</span>
+          <span class="case-flow__arrow" aria-hidden="true"><svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 1L19 6L14 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 6H18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+          <span class="case-flow__step">Проекты</span>
+          <span class="case-flow__arrow" aria-hidden="true"><svg width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M14 1L19 6L14 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 6H18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+          <span class="case-flow__step">создать проект</span>
+          <span class="case-flow__arrow" aria-hidden="true"><svg width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M14 1L19 6L14 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 6H18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+          <span class="case-flow__step">выбрать сервис</span>
+          <span class="case-flow__arrow" aria-hidden="true"><svg width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M14 1L19 6L14 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 6H18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+          <span class="case-flow__step">Заполнить общую информацию</span>
+          <span class="case-flow__arrow" aria-hidden="true"><svg width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M14 1L19 6L14 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 6H18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+          <span class="case-flow__step">Создать интерфейс</span>
+          <span class="case-flow__arrow" aria-hidden="true"><svg width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M14 1L19 6L14 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 6H18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+          <span class="case-flow__step">сохранить как финал</span>
+          <span class="case-flow__arrow" aria-hidden="true"><svg width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M14 1L19 6L14 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 6H18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+          <span class="case-flow__step">выбрать боевой интерфейс</span>
+          <span class="case-flow__arrow" aria-hidden="true"><svg width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M14 1L19 6L14 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 6H18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+          <span class="case-flow__step">написать инструкцию</span>
+          <span class="case-flow__arrow" aria-hidden="true"><svg width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M14 1L19 6L14 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 6H18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+          <span class="case-flow__step">настроить СЛА качества и&nbsp;скорости</span>
+          <span class="case-flow__arrow" aria-hidden="true"><svg width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M14 1L19 6L14 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 6H18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+          <span class="case-flow__step">«сохранить и&nbsp;выйти»</span>
+          <span class="case-flow__arrow" aria-hidden="true"><svg width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M14 1L19 6L14 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 6H18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+          <span class="case-flow__step">опубликовать проект</span>
+          <span class="case-flow__arrow" aria-hidden="true"><svg width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M14 1L19 6L14 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 6H18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+          <span class="case-flow__step">создать пул</span>
+          <span class="case-flow__arrow" aria-hidden="true"><svg width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M14 1L19 6L14 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 6H18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+          <span class="case-flow__step">заполнить общую информацию</span>
+          <span class="case-flow__arrow" aria-hidden="true"><svg width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M14 1L19 6L14 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 6H18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+          <span class="case-flow__step">выбрать обучение</span>
+          <span class="case-flow__arrow" aria-hidden="true"><svg width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M14 1L19 6L14 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 6H18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+          <span class="case-flow__step">настроить аудиторию</span>
+          <span class="case-flow__arrow" aria-hidden="true"><svg width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M14 1L19 6L14 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 6H18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+          <span class="case-flow__step">настроить цену и&nbsp;качество</span>
+          <span class="case-flow__arrow" aria-hidden="true"><svg width="20" height="12" viewBox="0 0 20 12" fill="none"><path d="M14 1L19 6L14 11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 6H18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+          <span class="case-flow__step case-flow__step--end">«создать пул»</span>
+        </div>
+      </div>
+      <figcaption class="case-page__caption">
+        Линейный путь запуска разметки в&nbsp;ЛК&nbsp;— блоки со&nbsp;<a href="https://www.figma.com/board/pQF2ikzv96nwg2WB9DM22B/%D0%9A%D1%81%D1%8E%D1%88%D0%B8%D0%BD%D1%8B-%D1%81%D1%85%D0%B5%D0%BC%D1%8B?node-id=596-37102&amp;t=8ekaA3d494okIxwJ-1" target="_blank" rel="noopener noreferrer">схемы в&nbsp;FigJam</a> (узел «Запуск разметки в&nbsp;лк.»). Сами шаги тоже сложные: внутри каждого много настроек.
+      </figcaption>
+    </figure>
+
+    <h2>Продуктовая цель</h2>
+    <p>
+      У&nbsp;нас есть цель, чтобы пользователи тратили меньше времени на&nbsp;запуск.
+    </p>
+    <p>
+      В&nbsp;идеале хочется, чтобы пользователь зашёл в&nbsp;проект, в&nbsp;пару слов описал, что хочет получить, загрузил файлик с&nbsp;заданиями&nbsp;— и&nbsp;дальше мы&nbsp;магически всё отладили под капотом и&nbsp;выдали результат.
+    </p>
+    <blockquote data-accent="violet">
+      <strong class="case-page__pull-label">Гипотеза</strong><br>
+      автоматическое заполнение полей поможет снизить время запуска разметки и&nbsp;нагрузку на&nbsp;поддержку.
+    </blockquote>
+
+    <h2>Почему «магии» не&nbsp;будет в&nbsp;чистом виде</h2>
+    <p>
+      На&nbsp;деле вот так просто мы&nbsp;не&nbsp;сможем, наверное, никогда. Нам всё равно нужны данные о&nbsp;бюджетах; нужно поддерживать костыльные процессы заказчиков, которые работают через API; нам нужно, чтобы пользователь сам настраивал фильтры аудитории&nbsp;— потому что мы&nbsp;не&nbsp;всё знаем о&nbsp;процессах найма (они ещё и&nbsp;разные у&nbsp;всех). Кроме того, есть много действительно сложных настроек, которые должен делать человек&nbsp;— никакая автоматика это пока не&nbsp;умеет. Есть юридические нюансы: мы&nbsp;должны показывать предупреждения, где пользователь берёт на&nbsp;себя все риски.
+    </p>
+
+    <h2>Направление развития</h2>
+    <p>
+      Несмотря на&nbsp;все препоны, мы&nbsp;командой идём в&nbsp;сторону облегчения пути пользователя.
+    </p>
+    <p>
+      Одним из&nbsp;первых важных шагов станет <strong>YCS-агент</strong>, встроенный в&nbsp;платформу и&nbsp;помогающий настроить запуск проекта и&nbsp;пула с&nbsp;заданиями.
+    </p>
+
+    <h2>Технический контекст: агент</h2>
+    <p>
+      Технически агент&nbsp;— внешняя тулза, встраиваемая в&nbsp;браузер. Он&nbsp;может считывать контекст, запоминать его и&nbsp;выполнять несколько команд. Разработала его в&nbsp;таком виде команда ML и&nbsp;предложила всем пользователям пробовать и&nbsp;внедрять в&nbsp;работу.
+    </p>
+
+    <figure class="case-page__figure">
+      <video
+        class="case-page__hero-img case-page__video"
+        controls
+        playsinline
+        preload="metadata"
+        aria-label="Запись: агент от команды ML"
+      >
+        <source src="портфолио/%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%20%D0%BE%D1%82%20ml.mp4" type="video/mp4">
+      </video>
+      <figcaption class="case-page__caption">Агент от&nbsp;ML</figcaption>
+    </figure>
+
+    <h2>Позиция дизайнера продукта</h2>
+    <p>
+      Я&nbsp;как дизайнер продукта не&nbsp;очень обрадовалась такой штуке в&nbsp;«голом» виде: пользователю нужно как-то узнать про агента, самому его встроить, прочитать документацию, запомнить, что умеет агент, и&nbsp;применять эти команды в&nbsp;нужных местах. Слишком сложно.
+    </p>
+
+    <h2>Что сделано по&nbsp;продукту</h2>
+    <p>
+      Поэтому я&nbsp;спроектировала кнопку&nbsp;— точку входа в&nbsp;агента, разобрала документацию на&nbsp;готовые команды, договорилась с&nbsp;командой ML о&nbsp;доработках, которые позволят агенту воспринимать не&nbsp;только зашитые команды, но&nbsp;и&nbsp;свободный ввод от&nbsp;пользователя.
+    </p>
+    <p>
+      В&nbsp;первой итерации это будет чатовый вид, потом мы&nbsp;научим его заполнять поля в&nbsp;контентной области, затем уберём его под капот и&nbsp;добавим триггеры для генерации контента, а&nbsp;в&nbsp;целевом виде будем предлагать полностью сгенерированное агентом всё&nbsp;— с&nbsp;возможностью внести изменения.
+    </p>
+
+    <figure class="case-page__figure">
+      <video
+        class="case-page__hero-img case-page__video"
+        controls
+        playsinline
+        preload="metadata"
+        aria-label="Запись первого прототипа агента"
+      >
+        <source src="портфолио/%D0%BF%D0%B5%D1%80%D0%B2%D1%8B%D0%B8%CC%86%20%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D1%82%D0%B8%D0%BF.mov" type="video/quicktime">
+      </video>
+      <figcaption class="case-page__caption">Первый прототип агента</figcaption>
+    </figure>
+
+    <div class="agent-scheme-grid" data-accent="violet" aria-label="Итерации развития агента">
+      <figure class="agent-scheme-card">
+        <figcaption class="agent-scheme-card__label">Итерация&nbsp;1</figcaption>
+        <div class="agent-scheme-card__diagram" role="presentation">
+          <div class="agent-scheme-row">
+            <span class="agent-scheme-box">Агент<br>в&nbsp;чате</span>
+            <span class="agent-scheme-arrow" aria-hidden="true">→</span>
+            <span class="agent-scheme-box agent-scheme-box--wide">Контент,<br>поля</span>
+          </div>
+          <div class="agent-scheme-note agent-scheme-note--up">
+            <span class="agent-scheme-arrow agent-scheme-arrow--vert" aria-hidden="true">↑</span>
+            <span class="agent-scheme-note__text">пользователь копирует и&nbsp;вставляет сам</span>
+          </div>
+        </div>
+      </figure>
+
+      <figure class="agent-scheme-card">
+        <figcaption class="agent-scheme-card__label">Итерация&nbsp;2</figcaption>
+        <div class="agent-scheme-card__diagram" role="presentation">
+          <div class="agent-scheme-row agent-scheme-row--wrap">
+            <span class="agent-scheme-box">Агент<br>в&nbsp;чате</span>
+            <span class="agent-scheme-arrow" aria-hidden="true">→</span>
+            <span class="agent-scheme-box">Сам заполняет<br>нужные поля</span>
+            <span class="agent-scheme-arrow" aria-hidden="true">→</span>
+            <span class="agent-scheme-box">Пользователь<br>правит</span>
+          </div>
+        </div>
+      </figure>
+
+      <figure class="agent-scheme-card">
+        <figcaption class="agent-scheme-card__label">Итерация&nbsp;3</figcaption>
+        <div class="agent-scheme-card__diagram agent-scheme-card__diagram--stack" role="presentation">
+          <div class="agent-scheme-row agent-scheme-row--stack">
+            <span class="agent-scheme-box agent-scheme-box--wide">Все поля заполняются сами</span>
+          </div>
+          <span class="agent-scheme-arrow agent-scheme-arrow--down" aria-hidden="true">↓</span>
+          <div class="agent-scheme-row">
+            <span class="agent-scheme-box">Агент как<br>помощник</span>
+          </div>
+        </div>
+      </figure>
+
+      <figure class="agent-scheme-card">
+        <figcaption class="agent-scheme-card__label">Итерация&nbsp;4</figcaption>
+        <div class="agent-scheme-card__diagram" role="presentation">
+          <div class="agent-scheme-row agent-scheme-row--wrap">
+            <span class="agent-scheme-box">Задача от<br>пользователя</span>
+            <span class="agent-scheme-arrow" aria-hidden="true">→</span>
+            <span class="agent-scheme-box">Агент<br>выполняет</span>
+            <span class="agent-scheme-arrow" aria-hidden="true">→</span>
+            <span class="agent-scheme-box">Правки<br>пользователя</span>
+          </div>
+          <p class="agent-scheme-hint">Полей изначально нет&nbsp;— появляется результат</p>
+        </div>
+      </figure>
+    </div>
+
+    <h2>Мой вклад</h2>
+    <h3>За что отвечала</h3>
+    <ul class="case-page__list">
+      <li>проработка пользовательского пути;</li>
+      <li>согласование итераций;</li>
+      <li>отрисовка UI;</li>
+      <li>прототип на&nbsp;S3 для грумингов и&nbsp;согласований.</li>
+    </ul>
+    <h3>С кем работала</h3>
+    <ul class="case-page__list">
+      <li>продакт;</li>
+      <li>команда ML;</li>
+      <li>разработка фронта и&nbsp;бэка;</li>
+      <li>команда дизайна.</li>
+    </ul>
+
+    <h2>Итог на&nbsp;сегодня</h2>
+    <p>
+      Встраиваемый в&nbsp;браузер агент уже работает; макеты чата и&nbsp;код кнопки, которая следит глазами за&nbsp;курсором, переданы фронтам. Ожидаем агента на&nbsp;проде в&nbsp;конце апреля.
+    </p>
+
+    <div class="case-page__resources" data-accent="violet">
+      <span class="case-page__resources-label">Прототип</span>
+      <ul class="case-page__resources-list">
+        <li>
+          <a href="https://gradient-prototypes.crowd.yandex-team.ru/designers/ks-igosheva/copilot/v1" target="_blank" rel="noopener noreferrer">Интерактивный прототип (Gradient)</a>
+        </li>
+      </ul>
+    </div>
+
+    <a href="index.html?view=portfolio" class="case-page__back case-page__back--bottom">&larr; Назад к&nbsp;портфолио</a>
+
+  </article>
+
+  <script src="script.js"></script>
+</body>
+</html>
