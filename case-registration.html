@@ -52,22 +52,31 @@
         Задача: самообслуживающаяся регистрация, рост доли внешних заказчиков и&nbsp;выручки, снижение нагрузки на&nbsp;поддержку.
       </p>
       <p>
-        <strong>Моя роль&nbsp;— дизайнер продукта:</strong> дискавери (конкуренты, бэк, интервью с&nbsp;поддержкой), сократила поля с&nbsp;15+ до&nbsp;необходимого минимума и&nbsp;спроектировала флоу до&nbsp;релиза.
+        <strong>Моя роль&nbsp;— дизайнер продукта:</strong> дискавери (конкуренты, бэк, интервью с&nbsp;поддержкой), сократила поля с&nbsp;15+ до&nbsp;необходимого минимума, спроектировала регистрацию в&nbsp;два этапа (сначала лёгкий вход без лишних данных, потом&nbsp;— когда клиент готов платить) и&nbsp;довела флоу до&nbsp;релиза.
       </p>
     </div>
 
     <figure class="case-page__figure">
       <img
-        class="case-page__hero-img"
-        src="портфолио/первый/регистрация.svg"
-        width="832"
-        height="608"
-        alt="Макет регистрации заказчика"
+        class="case-page__hero-img case-page__hero-img--dark"
+        src="assets/registration-dark2.svg"
+        width="1280"
+        height="720"
+        alt="Макет экрана регистрации заказчика, тёмная тема"
+        loading="eager"
+        decoding="async"
+      >
+      <img
+        class="case-page__hero-img case-page__hero-img--light"
+        src="assets/registration-light2.svg"
+        width="1280"
+        height="720"
+        alt="Макет экрана регистрации заказчика, светлая тема"
         loading="eager"
         decoding="async"
       >
       <figcaption class="case-page__caption">
-        Макет регистрации заказчика
+        Макет регистрации заказчика (тёмная и&nbsp;светлая тема)
       </figcaption>
     </figure>
 
@@ -107,10 +116,18 @@
       — Снизить нагрузку на&nbsp;поддержку
     </blockquote>
 
+    <h2>Два этапа регистрации</h2>
+    <p>
+      В&nbsp;то&nbsp;время, когда мы&nbsp;начали работать над регистрацией, ни&nbsp;у&nbsp;кого не&nbsp;было нормального демо: продукт нельзя было «потрогать» до&nbsp;заявки. И&nbsp;у&nbsp;конкурентов, и&nbsp;у&nbsp;нас в&nbsp;первых итерациях формы изначально просили много данных и&nbsp;документов.
+    </p>
+    <p>
+      Поэтому мы&nbsp;разделили регистрацию на&nbsp;два этапа: сначала&nbsp;— очень простой вход, мы&nbsp;не&nbsp;просим даже телефон. Когда клиент уже готов тратить деньги, просим немного данных; чаще всего их&nbsp;нужно просто подтвердить&nbsp;— они уже есть в&nbsp;Яндекс&nbsp;ID.
+    </p>
+
     <!-- Дискавери -->
     <h2>Дискавери</h2>
     <p>
-      В&nbsp;первую очередь я&nbsp;пошла смотреть конкурентов, разобралась, что у&nbsp;нас лежит
+      Дальше я&nbsp;пошла смотреть конкурентов, разобралась, что у&nbsp;нас лежит
       на&nbsp;бэке, что вылилось во&nbsp;внезапный миникастдев и&nbsp;пообщалась с&nbsp;маркетингом.
     </p>
 
@@ -119,9 +136,21 @@
       Форма лидогенерации&nbsp;— собирают контакты, заполняют руками поддержки.
       Такой вариант мы&nbsp;не&nbsp;рассматривали, потому что именно от&nbsp;ручной работы хотели уйти.
     </p>
+    <p class="case-page__competitor-note-text">
+      Озон: на&nbsp;тот момент форма работала как&nbsp;лидогенерация; сейчас у&nbsp;них уже другая схема, скрин не&nbsp;сохранился.
+    </p>
 
     <figure class="case-page__figure">
-      <div class="mockup-placeholder" style="aspect-ratio: 16/9"><span>Скриншоты конкурентов</span></div>
+      <img
+        class="case-page__hero-img"
+        src="assets/competitor-registration-sber.png"
+        width="2380"
+        height="1580"
+        alt="Сбер — форма лидогенерации"
+        loading="lazy"
+        decoding="async"
+      >
+      <figcaption class="case-page__caption">Сбер — лидогенерация</figcaption>
     </figure>
 
     <h3>Другие конкуренты</h3>
@@ -146,6 +175,22 @@
       собственно, лидам поддержки, выяснять, как&nbsp;и&nbsp;зачем они пользуются информацией,
       которую заполняют, когда приходит заявка.
     </p>
+
+    <figure class="case-page__figure">
+      <img
+        class="case-page__hero-img"
+        src="assets/legal-entity-fields.png"
+        width="1327"
+        height="1318"
+        alt="Форма для юрлица: реквизиты, адрес, загрузка документов для снятия лимита разметок"
+        loading="lazy"
+        decoding="async"
+      >
+      <figcaption class="case-page__caption">
+        Поля для юрлиц: раньше такую форму с&nbsp;адресом, реквизитами и&nbsp;пакетом документов приходилось проходить сразу. Сейчас верификация и&nbsp;документы&nbsp;— только после тысячи размеченных картинок.
+      </figcaption>
+    </figure>
+
     <blockquote>
       Гипотеза: поддержка не&nbsp;пользуется полями в&nbsp;дальнейшем, поэтому не&nbsp;заполняет
       нормально. Мы&nbsp;можем сократить количество полей для&nbsp;заполнения пользователем
@@ -159,7 +204,16 @@
     </p>
 
     <figure class="case-page__figure">
-      <div class="mockup-placeholder" style="aspect-ratio: 16/9"><span>Схема: было 15+ полей → стало N</span></div>
+      <img
+        class="case-page__hero-img"
+        src="assets/registration-fields-after.png"
+        width="1280"
+        height="800"
+        alt="Реквизиты при первом пополнении: поля с подстановкой из Яндекс ID"
+        loading="lazy"
+        decoding="async"
+      >
+      <figcaption class="case-page__caption">Поля регистрации — стало</figcaption>
     </figure>
 
     <h3>Инсайт</h3>
@@ -186,10 +240,6 @@
       дизайн-системы).
     </p>
 
-    <figure class="case-page__figure">
-      <div class="mockup-placeholder" style="aspect-ratio: 16/9"><span>Макеты / итерации</span></div>
-    </figure>
-
     <!-- Что в итоге -->
     <h2>Что в&nbsp;итоге</h2>
     <p>
@@ -203,7 +253,16 @@
     </p>
 
     <figure class="case-page__figure">
-      <div class="mockup-placeholder" style="aspect-ratio: 16/9"><span>Финальные макеты</span></div>
+      <img
+        class="case-page__hero-img"
+        src="assets/final-mockups-overview.png"
+        width="2800"
+        height="2218"
+        alt="Овервью финальных макетов: адаптивные экраны, UI kit, схема флоу регистрации"
+        loading="lazy"
+        decoding="async"
+      >
+      <figcaption class="case-page__caption">Овервью финальных макетов</figcaption>
     </figure>
 
     <div class="case-page__resources" data-accent="cyan">

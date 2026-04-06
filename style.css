@@ -1480,6 +1480,13 @@ body.yandex-mode .card__arrow--nda { display: block; }
   margin: 40px 0;
 }
 
+.case-page__competitor-note-text {
+  margin: 0 0 20px;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
 .case-page__figure .mockup-placeholder {
   border-radius: 16px;
 }
@@ -1692,6 +1699,152 @@ body.yandex-mode .card__arrow--nda { display: block; }
 
 [data-theme="light"] .agent-scheme-box {
   background: #fff;
+}
+
+/* ---- Compare screenshots (case dashboard: Задания vs Янг) ---- */
+.case-page__compare-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 28px 0 8px;
+  align-items: start;
+}
+
+.case-page__figure--compare {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .case-page__compare-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.case-page__compare-note {
+  margin: 0 0 32px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* ---- IA map (case dashboard) ---- */
+.case-page__figure.case-ia {
+  margin-top: 24px;
+}
+
+.case-ia__diagram {
+  padding: 22px 18px 24px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.case-ia__root {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--text);
+  border: 1px solid rgba(184, 255, 0, 0.45);
+  box-shadow: 0 0 0 1px rgba(184, 255, 0, 0.08);
+  background: var(--bg);
+}
+
+.case-ia[data-accent="lime"] .case-ia__root {
+  border-color: rgba(184, 255, 0, 0.55);
+}
+
+.case-ia__stem {
+  width: 2px;
+  height: 18px;
+  margin: 0 auto;
+  border-radius: 1px;
+  background: linear-gradient(180deg, var(--neon-lime), rgba(184, 255, 0, 0.25));
+  opacity: 0.85;
+}
+
+.case-ia__branches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+@media (min-width: 900px) {
+  .case-ia__card--wide {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 899px) {
+  .case-ia__card--wide {
+    grid-column: span 1;
+  }
+}
+
+.case-ia__card {
+  margin: 0;
+  padding: 14px 12px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--neon-lime);
+  background: var(--bg);
+}
+
+.case-ia__title {
+  margin: 0 0 10px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.case-ia__badge {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  vertical-align: middle;
+  color: var(--bg);
+  background: var(--neon-lime);
+}
+
+[data-theme="light"] .case-ia__badge {
+  color: #0f1408;
+}
+
+.case-ia__leaves {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.case-ia__leaves li {
+  position: relative;
+  padding-left: 12px;
+}
+
+.case-ia__leaves li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--neon-lime);
+  opacity: 0.65;
 }
 
 .case-page__hero-img {

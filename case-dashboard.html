@@ -58,7 +58,7 @@
     <figure class="case-page__figure">
       <img
         class="case-page__hero-img"
-        src="портфолио/crowdsolutions-labeling-hero.png"
+        src="assets/crowdsolutions-labeling-hero.png"
         width="1200"
         height="630"
         alt="Yandex Crowd Solutions — визуал с посадочной страницы про разметку данных"
@@ -80,6 +80,36 @@
     <h3>Два продукта и&nbsp;одна кодовая база</h3>
     <p>
       Раньше было два продукта: Яндекс Задания и&nbsp;Янг. Внутри они ничем не&nbsp;отличались друг от&nbsp;друга, у&nbsp;них была одинаковая кодовая база, мы&nbsp;поддерживали одинаковые фичи для обоих продуктов. С&nbsp;точки зрения дизайна и&nbsp;кода это практически одинаковые продукты.
+    </p>
+
+    <div class="case-page__compare-grid" aria-label="Сравнение интерфейса Заданий и Янга">
+      <figure class="case-page__figure case-page__figure--compare">
+        <img
+          class="case-page__hero-img"
+          src="assets/tasks.png"
+          width="2940"
+          height="1674"
+          alt="Яндекс Задания: список проектов заказчика"
+          loading="lazy"
+          decoding="async"
+        >
+        <figcaption class="case-page__caption">Задания</figcaption>
+      </figure>
+      <figure class="case-page__figure case-page__figure--compare">
+        <img
+          class="case-page__hero-img"
+          src="assets/yang.png"
+          width="2940"
+          height="1668"
+          alt="Янг: список проектов заказчика"
+          loading="lazy"
+          decoding="async"
+        >
+        <figcaption class="case-page__caption">Янг</figcaption>
+      </figure>
+    </div>
+    <p class="case-page__compare-note">
+      Один и&nbsp;тот же паттерн интерфейса для заказчика.
     </p>
 
     <h3>Юридика и&nbsp;типы исполнителей</h3>
@@ -123,6 +153,102 @@
       <li>уменьшение техдолга и&nbsp;bus factor;</li>
       <li>внедрение ИИ и&nbsp;автоматизаций.</li>
     </ul>
+
+    <h2>Информационная архитектура платформы</h2>
+    <p>
+      На&nbsp;FigJam зафиксирована схема «Платформа»&nbsp;— от&nbsp;корня расходятся разделы продукта для заказчика.
+    </p>
+
+    <figure class="case-page__figure case-ia" data-accent="lime" aria-label="Информационная архитектура платформы заказчика: от узла Платформа к разделам продукта">
+      <div class="case-ia__diagram">
+        <div class="case-ia__root">Платформа</div>
+        <div class="case-ia__stem" aria-hidden="true"></div>
+        <div class="case-ia__branches">
+          <section class="case-ia__card">
+            <h3 class="case-ia__title">Витрина услуг</h3>
+            <ul class="case-ia__leaves">
+              <li>Разметка</li>
+              <li>Модерация</li>
+              <li>Пешеходный крауд</li>
+              <li>Дизайн</li>
+              <li>Другие услуги</li>
+            </ul>
+          </section>
+          <section class="case-ia__card">
+            <h3 class="case-ia__title">Аналитика (дашборд)</h3>
+            <ul class="case-ia__leaves">
+              <li>Виджеты: вид, «лампочки», бюджеты, воронки</li>
+              <li>Фильтрация</li>
+              <li>Подписка на&nbsp;уведомления от&nbsp;виджета</li>
+            </ul>
+          </section>
+          <section class="case-ia__card">
+            <h3 class="case-ia__title">Кроссплатформенные проекты <span class="case-ia__badge">NEW</span></h3>
+          </section>
+          <section class="case-ia__card case-ia__card--wide">
+            <h3 class="case-ia__title">Проекты</h3>
+            <ul class="case-ia__leaves">
+              <li>Группировка, сортировка, аналитика по&nbsp;проекту</li>
+              <li>Пулы: боевые, постмодерация, реабилитация, пресеты</li>
+              <li>Обучения, инструкции, ответы и&nbsp;агрегации</li>
+              <li>Песочница, сравнение моделей/промптов по&nbsp;метрикам</li>
+            </ul>
+          </section>
+          <section class="case-ia__card">
+            <h3 class="case-ia__title">Хранилище · AI</h3>
+            <ul class="case-ia__leaves">
+              <li>Песочница</li>
+              <li>Разметка документов, «коробки»</li>
+              <li>Сбор датасета</li>
+            </ul>
+          </section>
+          <section class="case-ia__card case-ia__card--wide">
+            <h3 class="case-ia__title">Центр управления</h3>
+            <ul class="case-ia__leaves">
+              <li>Бюджеты: АБЦ, квоты, учёт затрат</li>
+              <li>Квотатор: приоритеты, исполнители</li>
+            </ul>
+          </section>
+          <section class="case-ia__card case-ia__card--wide">
+            <h3 class="case-ia__title">Навыки и&nbsp;исполнители</h3>
+            <ul class="case-ia__leaves">
+              <li>Списки, фильтры, карточка, массовые действия</li>
+              <li>Команды, роли, блокировки, бонусы</li>
+            </ul>
+          </section>
+          <section class="case-ia__card">
+            <h3 class="case-ia__title">Профиль</h3>
+            <ul class="case-ia__leaves">
+              <li>Пользователи, доступ к&nbsp;аккаунту</li>
+              <li>Личные данные, интеграции</li>
+              <li>Роботы, Яндекс&nbsp;Диск, хранилища</li>
+            </ul>
+          </section>
+          <section class="case-ia__card">
+            <h3 class="case-ia__title">Настройки</h3>
+            <ul class="case-ia__leaves">
+              <li>Тема: светлая / тёмная / системная</li>
+              <li>Язык: RU / EN</li>
+            </ul>
+          </section>
+          <section class="case-ia__card">
+            <h3 class="case-ia__title">Уведомления</h3>
+            <ul class="case-ia__leaves">
+              <li>Новые / прочитанные</li>
+            </ul>
+          </section>
+          <section class="case-ia__card">
+            <h3 class="case-ia__title">NDA</h3>
+            <ul class="case-ia__leaves">
+              <li>Ссылка от&nbsp;безопасности</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+      <figcaption class="case-page__caption">
+        <a href="https://www.figma.com/board/pQF2ikzv96nwg2WB9DM22B/%D0%9A%D1%81%D1%8E%D1%88%D0%B8%D0%BD%D1%8B-%D1%81%D1%85%D0%B5%D0%BC%D1%8B?node-id=196-3953&amp;t=8ekaA3d494okIxwJ-1" target="_blank" rel="noopener noreferrer">Исходная схема в&nbsp;FigJam</a>
+      </figcaption>
+    </figure>
 
     <h2>Моя роль</h2>
     <p>
@@ -172,6 +298,9 @@
       <span class="case-page__resources-label">Макеты</span>
       <ul class="case-page__resources-list">
         <li>
+          <a href="https://www.figma.com/board/pQF2ikzv96nwg2WB9DM22B/%D0%9A%D1%81%D1%8E%D1%88%D0%B8%D0%BD%D1%8B-%D1%81%D1%85%D0%B5%D0%BC%D1%8B?node-id=196-3953&amp;t=8ekaA3d494okIxwJ-1" target="_blank" rel="noopener noreferrer">FigJam&nbsp;— ИА платформы заказчика</a>
+        </li>
+        <li>
           <a href="https://www.figma.com/design/cXRtzdyAUfiA9mCcCEPv8t/%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B-%D0%B8-%D0%BF%D1%83%D0%BB%D1%8B?node-id=16206-245464&amp;t=BXLyjK4xxWo1tTR3-1" target="_blank" rel="noopener noreferrer">Figma&nbsp;— «Проекты и пулы»</a>
         </li>
         <li>
@@ -179,6 +308,21 @@
         </li>
       </ul>
     </div>
+
+    <figure class="case-page__figure">
+      <img
+        class="case-page__hero-img"
+        src="assets/lk.png"
+        width="2940"
+        height="1668"
+        alt="Единый личный кабинет: список проектов с колонками Бизнес и Крауд"
+        loading="lazy"
+        decoding="async"
+      >
+      <figcaption class="case-page__caption">
+        Единый ЛК после сращивания: проекты в&nbsp;одном интерфейсе
+      </figcaption>
+    </figure>
 
     <a href="index.html?view=portfolio" class="case-page__back case-page__back--bottom">&larr; Назад к&nbsp;портфолио</a>
 
